@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="myframework">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/myframework.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
