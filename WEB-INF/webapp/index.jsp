@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Nom complet : ${nomComplet}</p>
-    <p>Age : ${age}</p>
+    <a href="${pageContext.request.contextPath}/produits/vente">Produit</a>
+    <a href="${pageContext.request.contextPath}/table/vente">Table</a>
 </body>
 </html>

@@ -6,13 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="vente" method="post">
+    <form action="" method="post">
         <label> nom : </label>
         <input type="text" name="nom">
         <label> prenom : </label>
         <input type="text" name="prenom">
-        <label> date naissance : </label>
-        <input type="number" name="age">
+        <input type="hidden" name="age" value="${id}">
         <input type="submit" value="soumettre">
     </form>
 </body>

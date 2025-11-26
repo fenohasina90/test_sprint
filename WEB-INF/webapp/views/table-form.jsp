@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ito ilay page.html</h1>
+    <p>Nom table : ${nom}</p>
 </body>
 </html>
