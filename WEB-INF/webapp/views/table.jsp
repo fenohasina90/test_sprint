@@ -6,12 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>TSY METY</h1>
-
-
-    <form action="/soumettre" method="post">
+    <form action="vente" method="post">
+        <label> nom Table: </label>
         <input type="text" name="nom">
-        <input type="text" name="prenom">
         <input type="submit" value="soumettre">
     </form>
 </body>
