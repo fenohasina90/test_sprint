@@ -13,14 +13,14 @@ import main.java.com.framework.ModelyAndView;
 @Controllera()
 @RequestMapping("/table")
 public class Produit {
-    @POSTA("/vente")
+    @POSTA("/affiche")
     public ModelyAndView calc(@RequestParam("nom") String nom) {
         ModelyAndView mv = new ModelyAndView("views/table-form");
         mv.addObject("nom", nom);
         return mv;
     }
 
-    @GETY("/vente")
+    @GETY("/affiche")
     public ModelyAndView hello() {
         return new ModelyAndView("views/table");
     }

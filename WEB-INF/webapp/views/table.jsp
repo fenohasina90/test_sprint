@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="vente" method="post">
+    <form action="affiche" method="post">
         <label> nom Table: </label>
         <input type="text" name="nom">
         <input type="submit" value="soumettre">

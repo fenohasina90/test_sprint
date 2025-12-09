@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import main.java.com.annote.Controllera;
 import main.java.com.annote.GETY;
@@ -38,17 +39,43 @@ public class Stock {
     }
 
     @POSTA("/vente")
-    public ModelyAndView soumettre(
-            @RequestParam("nom") String nom,
-            @RequestParam("prenom") String prenom,
-            @RequestParam("age") BigDecimal age // si tu ajoutes un champ age
-    ) {
-        System.out.println("date avec time : " + age);
+    public ModelyAndView soumettre(Map<String, Object> form) {
+        String nom = (String) form.get("nom");
+        String prenom = (String) form.get("prenom");
+        String ageStr = (String) form.get("age");
+
+        Object vipRaw = form.get("vip"); // peut être String ou String[]
+
+        String[] vipValues;
+        if (vipRaw instanceof String) {
+            vipValues = new String[]{(String) vipRaw};
+        } else if (vipRaw instanceof String[]) {
+            vipValues = (String[]) vipRaw;
+        } else {
+            vipValues = new String[0]; // rien coché
+        }
+
         ModelyAndView mv = new ModelyAndView("include/pages");
         mv.addObject("nomComplet", nom + " " + prenom);
-        mv.addObject("age", age);
+        mv.addObject("age", ageStr);
+        mv.addObject("vipOptions", vipValues);
         return mv;
     }
+
+    // @POSTA("/vente")
+    // public ModelyAndView soumettre(
+    //         @RequestParam("nom") String nom,
+    //         @RequestParam("prenom") String prenom,
+    //         @RequestParam("age") BigDecimal age // si tu ajoutes un champ age
+    // ) {
+    //     System.out.println("date avec time : " + age);
+    //     ModelyAndView mv = new ModelyAndView("include/pages");
+    //     mv.addObject("nomComplet", nom + " " + prenom);
+    //     mv.addObject("age", age);
+    //     return mv;
+    // }
+
+
 
     @POSTA("/save")
     public void save() {}

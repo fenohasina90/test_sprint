@@ -8,5 +8,19 @@
 <body>
     <p>Nom complet : ${nomComplet}</p>
     <p>Age : ${age}</p>
+
+    <p>Options VIP choisies :</p>
+    <ul>
+    <%
+        Object raw = request.getAttribute("vipOptions");
+        if (raw instanceof String[]) {
+            for (String v : (String[]) raw) {
+    %>
+        <li><%= v %></li>
+    <%
+            }
+        }
+    %>
+    </ul>
 </body>
 </html>
